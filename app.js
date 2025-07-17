@@ -11,12 +11,21 @@ formulario.addEventListener("submit", (e)=>{
             <button id="eliminar" onclick="eliminar(this)">Eliminar</button>
         </div> `;
         cont++;
-       
+        
 });
 function editar(e){
-
+    const parrafo = e.parentElement.querySelector("p:nth-child(2)");
+    console.log(parrafo);
+    parrafo.contentEditable = true;
+    e.value = "Guardar";
+    if(parrafo.contentEditable){
+        parrafo.contentEditable = false;
+    }
+    if(e.value == "Guardar"){
+        e.value = "Editar";
+    }
 }
 
 function eliminar(e){
-e.parentElement.remove();
+    e.parentElement.remove();
 }
