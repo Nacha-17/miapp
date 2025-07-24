@@ -15,14 +15,15 @@ formulario.addEventListener("submit", (e)=>{
 });
 function editar(e){
     const parrafo = e.parentElement.querySelector("p:nth-child(2)");
-    console.log(parrafo);
-    parrafo.contentEditable = true;
-    e.value = "Guardar";
-    if(parrafo.contentEditable){
-        parrafo.contentEditable = false;
+    
+    if(e.textcontent == "Editar"){
+        parrafo.contentEditable = true;
+        e.textcontent ="Guardar"
+        parrafo.focus();
     }
-    if(e.value == "Guardar"){
-        e.value = "Editar";
+    else{
+        e.textcontent ="Editar"
+        parrafo.contentEditable = false;
     }
 }
 
